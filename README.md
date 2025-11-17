@@ -1,5 +1,9 @@
 # Data Warehouse Project - End-to-End ETL
 
+## Architecture Diagram
+![Data Warehouse Architecture](Docs/DWH_Arch.png)
+
+
 ## Overview
 
 This project demonstrates a complete Data Warehouse pipeline moving data from **Bronze → Silver → Gold** layers, applying transformations, business rules, and building a **Star Schema** for analytics and BI reporting.
