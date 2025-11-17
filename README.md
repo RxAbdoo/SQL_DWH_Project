@@ -162,9 +162,7 @@ Gold Layer (Star Schema for BI & ML)
 
 ## Author
 
-Prepared by: **Abdelrhman (Abdo)**
+Prepared by: **Abdelrhman**
 Technologies: SQL Server, Data Warehousing, ETL, Star Schema, Stored Procedures
 
----
 
-End of README.
