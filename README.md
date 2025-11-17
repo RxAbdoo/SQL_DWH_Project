@@ -6,6 +6,8 @@ This project demonstrates a complete Data Warehouse pipeline moving data from **
 
 ## Architecture Layers
 
+Below are visual architecture representations used in the project including Data Flow, Lineage, and Entity Relationships.
+
 ### **Bronze Layer (Raw Layer)**
 
 * Stores raw source data as-ingested without modifications
@@ -96,6 +98,33 @@ Generated using calendar logic Including:
 
 ---
 
+## Data Flow & Lineage
+
+```
+CRM & ERP Sources
+      ↓
+Bronze Layer (Raw Tables)
+      ↓
+Silver Layer (Validated & Cleaned Tables)
+      ↓
+Gold Layer (Star Schema for BI & ML)
+```
+
+### Integration between CRM & ERP
+
+* `crm_sales_details` joins to `crm_prd_info` via `prd_key`
+* `crm_sales_details` joins to `crm_cust_info` via `cst_id`
+* `erp_cust_az12` enhances customer data with birthdate
+* `erp_loc_a101` enhances customer data with location
+* `erp_px_cat_g1v2` enriches product category attributes
+
+### Star Schema Usage
+
+* `fact_sales` links dimensions via surrogate keys for performance
+* Supports BI dashboards, machine learning pipelines, and ad‑hoc SQL analytics
+
+---
+
 ## ETL Orchestration
 
 * Implemented using SQL Stored Procedures and TRY/CATCH error handling
@@ -133,6 +162,9 @@ Generated using calendar logic Including:
 
 ## Author
 
+Prepared by: **Abdelrhman (Abdo)**
 Technologies: SQL Server, Data Warehousing, ETL, Star Schema, Stored Procedures
 
+---
 
+End of README.
